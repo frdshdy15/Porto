@@ -1,0 +1,311 @@
+/* --- Variabel & Reset Global --- */
+:root {
+    --primary-color: #8B4513; /* Sienna/Earthy Gold (Aksen Produksi) */
+    --secondary-color: #333333; /* Dark Grey */
+    --background-color: #F8F8F8; /* Light Background */
+    --text-color: #1A1A2E;
+    --light-text: #FFFFFF;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* --- Utility & Bagian Umum --- */
+.section {
+    padding: 100px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 800;
+    margin-bottom: 70px;
+    color: var(--primary-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #A0522D; /* Darker */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    background: var(--light-text);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    margin-left: 30px;
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.hero-content h1 {
+    font-size: 5em;
+    color: var(--secondary-color);
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.profile-placeholder {
+    width: 350px;
+    height: 350px;
+    background: #CCC;
+    border-radius: 50%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    background-image: url('Cv Firdaus Rev.pdf.jpeg'); /* Gantilah dengan nama file foto Anda yang sebenarnya */
+    background-size: cover;
+    background-position: center;
+    border: 8px solid var(--primary-color);
+}
+
+/* --- About Section --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-block {
+    padding: 30px;
+    background: var(--light-text);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.info-block:hover {
+    transform: translateY(-5px);
+}
+
+.info-block h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #E0E0E0;
+    padding-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.info-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-block ul li {
+    margin-bottom: 12px;
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill-item {
+    background: var(--secondary-color);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Experience Section (Timeline Style) --- */
+.experience-section {
+    position: relative;
+}
+
+.experience-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background: var(--light-text);
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    transition: border 0.3s;
+    border-left: 5px solid transparent;
+}
+
+.experience-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.experience-card:hover {
+    border-left: 5px solid var(--primary-color);
+}
+
+.experience-card .year {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    min-width: 120px;
+    text-align: center;
+}
+
+.experience-card .content {
+    flex-grow: 1;
+    padding: 0 40px;
+}
+
+.experience-card .content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    text-align: center;
+}
+
+.contact-info-grid {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    background: var(--light-text);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact-link:hover {
+    background: var(--primary-color);
+    color: var(--light-text);
+    transform: translateY(-5px);
+}
+
+.contact-link i {
+    font-size: 1.5em;
+    margin-right: 10px;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+.contact-link:hover i {
+    color: var(--light-text);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background: var(--secondary-color);
+    color: var(--light-text);
+    font-size: 0.9em;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding-top: 100px;
+    }
+    .hero-content {
+        order: 2;
+        margin-top: 50px;
+    }
+    .hero-image {
+        order: 1;
+    }
+    .hero-content h1 {
+        font-size: 3.5em;
+    }
+    .experience-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .experience-card:nth-child(even) {
+        flex-direction: column;
+    }
+    .experience-card .content {
+        padding: 20px 0;
+    }
+    .experience-card .year {
+        margin-bottom: 15px;
+    }
+}
